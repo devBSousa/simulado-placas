@@ -28,7 +28,20 @@ function Result({ acertos, total, onRestart}) {
       >
         Fazer novamente
       </button>
+
+       <footer className="mt-8 text-center">
+      <a
+        href="https://brunodev.dev.br"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm text-gray-400 transition hover:text-blue-600"
+      >
+        Criado por <span className="font-semibold">BrunoDev</span>
+      </a>
+    </footer>
     </div>
+
+   
   );
 }
 

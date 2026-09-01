@@ -50,6 +50,11 @@ function App() {
     }
 
     setConfirmada(true);
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    })
+    
   };
 
   const proximaQuestao = () => {
@@ -117,6 +122,7 @@ function App() {
             </div>
 
             <button
+              id="proxima"
               onClick={proximaQuestao}
               className="w-full rounded-2xl bg-blue-600 px-6 py-4 text-xl font-bold text-white hover:bg-blue-700"
             >

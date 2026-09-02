@@ -10,6 +10,17 @@ import proibidoEstacionarParar from "../assets/placas/proibido-estacionar-parar.
 import sentidoObrigatorioDireita from "../assets/placas/sentido-obrigatorio-direita.webp";
 import sentidoObrigatorioEsquerda from "../assets/placas/sentido-obrigatorio-esquerda.webp";
 
+import curvaAcentuadaEsquerda from "../assets/placas/curva-acentuada-esquerda.webp";
+import curvaAcentuadaDireita from "../assets/placas/curva-acentuada-direita.webp";
+import pistaEscorregadia from "../assets/placas/pista-escorregadia.webp";
+import lombada from "../assets/placas/lombada.webp";
+import depressao from "../assets/placas/depressao.webp";
+import ponteEstreita from "../assets/placas/ponte-estreita.webp";
+import areaEscolar from "../assets/placas/area-escolar.webp";
+import passagemPedestres from "../assets/placas/passagem-pedestres.webp";
+import animaisNaPista from "../assets/placas/animais-na-pista.webp";
+import semaforoAFrente from "../assets/placas/semaforo-a-frente.webp";
+
 
 
 const placas = [
@@ -252,6 +263,136 @@ const placas = [
       "Sentido obrigatório"
     ],
     correta: 1
+  },
+
+    {
+    id: 21,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Curva acentuada à direita",
+      "Pista escorregadia",
+      "Ponte estreita",
+      "Curva acentuada à esquerda",
+    ],
+    correta: 3,
+    imagem: curvaAcentuadaEsquerda
+  },
+
+  {
+    id: 22,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Proibido virar à direita",
+      "Curva acentuada à direita",
+      "Curva acentuada à esquerda",
+      "Sentido obrigatório"
+    ],
+    correta: 1,
+    imagem: curvaAcentuadaDireita
+  },
+
+  {
+    id: 23,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Pista escorregadia",
+      "Pista dividida",
+      "Pista irregular",
+      "Área escolar"
+    ],
+    correta: 0,
+    imagem: pistaEscorregadia
+  },
+
+  {
+    id: 24,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Depressão na pista",
+      "Ponte estreita",
+      "Lombada",
+      "Pista escorregadia"
+    ],
+    correta: 2,
+    imagem: lombada
+  },
+
+  {
+    id: 25,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Lombada",
+      "Curva perigosa",
+      "Pista irregular",
+      "Depressão na pista",
+    ],
+    correta: 3,
+    imagem: depressao
+  },
+
+  {
+    id: 26,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Ponte estreita",
+      "Ponte móvel",
+      "Pista estreita",
+      "Passagem de pedestres"
+    ],
+    correta: 0,
+    imagem: ponteEstreita
+  },
+
+  {
+    id: 27,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Passagem de pedestres",
+      "Crianças",
+      "Área escolar",
+      "Circulação de bicicletas"
+    ],
+    correta: 2,
+    imagem: areaEscolar
+  },
+
+  {
+    id: 28,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Passagem de pedestres",
+      "Área escolar",
+      "Proibido pedestres",
+      "Travessia de ciclistas"
+    ],
+    correta: 0,
+    imagem: passagemPedestres
+  },
+
+  {
+    id: 29,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Circulação de pedestres",
+      "Animais na pista",
+      "Área rural",
+      "Proibido animais"
+    ],
+    correta: 1,
+    imagem: animaisNaPista
+  },
+
+  {
+    id: 30,
+    pergunta: "O que esta placa de trânsito indica?",
+    alternativas: [
+      "Semáforo à frente",
+      "Cruzamento à frente",
+      "Pare à frente",
+      "Passagem de pedestres"
+    ],
+    correta: 0,
+    imagem: semaforoAFrente
   }
 ];
 

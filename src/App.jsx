@@ -3,33 +3,89 @@ import Question from "./components/Question";
 import Result from "./components/Result";
 import placas from "./data/placas";
 
-function App() {
-  const [questaoAtual, setQuestaoAtual] = useState(0);
+const TOTAL_ALTERNATIVAS = 4;
 
-  const [respostas, setRespostas] = useState([]);
+const normalizarRespostas = (lista) => {
+  if (!Array.isArray(lista)) {
+    return [];
+  }
+
+  return lista
+    .filter(
+      (resposta) =>
+        Number.isInteger(resposta) &&
+        resposta >= 0 &&
+        resposta < TOTAL_ALTERNATIVAS
+    )
+    .slice(0, placas.length);
+};
+
+const limparEstadoPersistido = () => {
+  localStorage.removeItem("simulado-questao");
+  localStorage.removeItem("simulado-respostas");
+};
+
+const lerEstadoPersistido = () => {
+  try {
+    const salvoQuestao = localStorage.getItem("simulado-questao");
+    const salvoRespostas = localStorage.getItem("simulado-respostas");
+
+    let questaoAtualValida = 0;
+
+    if (salvoQuestao !== null) {
+      const numero = Number(salvoQuestao);
+      if (Number.isInteger(numero) && numero >= 0 && numero < placas.length) {
+        questaoAtualValida = numero;
+      } else {
+        limparEstadoPersistido();
+      }
+    }
+
+    let respostasValidas = [];
+
+    if (salvoRespostas !== null) {
+      const respostasSalvas = JSON.parse(salvoRespostas);
+      respostasValidas = normalizarRespostas(respostasSalvas);
+
+      if (respostasValidas.length !== respostasSalvas.length) {
+        limparEstadoPersistido();
+      }
+    }
+
+    return {
+      questaoAtual: questaoAtualValida,
+      respostas: respostasValidas,
+    };
+  } catch {
+    limparEstadoPersistido();
+    return {
+      questaoAtual: 0,
+      respostas: [],
+    };
+  }
+};
+
+function App() {
+  const [questaoAtual, setQuestaoAtual] = useState(() => lerEstadoPersistido().questaoAtual);
+  const [respostas, setRespostas] = useState(() => lerEstadoPersistido().respostas);
 
   const [confirmada, setConfirmada] = useState(false);
 
   const [finalizado, setFinalizado] = useState(false);
 
-  const respostaAtual = respostas[questaoAtual] ?? null;
+  const questaoAtualSegura =
+    Number.isInteger(questaoAtual) && questaoAtual >= 0 && questaoAtual < placas.length
+      ? questaoAtual
+      : 0;
+
+  const respostasSeguras = normalizarRespostas(respostas);
+
+  const respostaAtual = respostasSeguras[questaoAtualSegura] ?? null;
 
   useEffect(() => {
-    localStorage.removeItem("simulado-questao");
-    localStorage.removeItem("simulado-respostas");
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem(
-      "simulado-questao",
-      questaoAtual
-    );
-
-    localStorage.setItem(
-      "simulado-respostas",
-      JSON.stringify(respostas)
-    );
-  }, [questaoAtual, respostas]);
+    localStorage.setItem("simulado-questao", String(questaoAtualSegura));
+    localStorage.setItem("simulado-respostas", JSON.stringify(respostasSeguras));
+  }, [questaoAtualSegura, respostasSeguras]);
 
   const responder = (indice) => {
     if (confirmada) {
@@ -75,7 +131,7 @@ function App() {
     setFinalizado(false);
   };
 
-  const acertos = respostas.filter(
+  const acertos = respostasSeguras.filter(
     (resposta, index) =>
       resposta === placas[index]?.correta
   ).length;
@@ -92,7 +148,7 @@ function App() {
     );
   }
 
-  const questao = placas[questaoAtual];
+  const questao = placas[questaoAtualSegura] ?? placas[0];
 
   return (
     <main className="flex min-h-screen justify-center bg-gray-100 p-4">

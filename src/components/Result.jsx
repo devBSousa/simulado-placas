@@ -1,12 +1,20 @@
+import { useEffect } from "react";
 import { falar } from "../../utils/falar";
 
-function Result({ acertos, total, onRestart}) {
+function Result({ acertos, total, onRestart }) {
+  const mensagem =
+    acertos >= total / 2
+      ? `Parabéns! Você acertou ${acertos} de ${total} questões.`
+      : `Que pena! Você acertou ${acertos} de ${total} questões. Não desanime, continue praticando!`;
+
+  useEffect(() => {
+    falar(mensagem);
+  }, [mensagem]);
 
   return (
     <div className="w-full max-w-2xl rounded-3xl bg-white p-8 text-center shadow-sm">
       <div className="mb-6 text-6xl">
         {acertos >= total / 2 ? "🎉" : "💪"}
-        {acertos >= total / 2 ? falar(`Parabéns! Você acertou ${acertos} de ${total} questões.`) : falar(`Que pena! Você acertou ${acertos} de ${total} questões. Não desanime, continue praticando!`)}
       </div>
 
       <h1 className="mb-3 text-3xl font-bold text-gray-800">

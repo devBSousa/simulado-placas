@@ -25,16 +25,6 @@ function Question({
       </div>
 
       <div className="rounded-3xl bg-white p-6 shadow-sm">
-        {questao.imagem && (
-          <div className="mb-6 flex justify-center">
-            <img
-              src={questao.imagem}
-              alt="Placa de trânsito"
-              className="h-52 w-52 object-contain"
-            />
-          </div>
-        )}
-
         <div className="mb-6 flex items-center gap-3">
           <h1 className="text-2xl font-bold text-gray-800">
             {questao.pergunta}
@@ -49,32 +39,58 @@ function Question({
           </button>
         </div>
 
-        <div className="space-y-3">
-          {questao.alternativas.map((alternativa, index) => (
-            <Alternative
-              key={alternativa}
-              letra={letras[index]}
-              texto={alternativa}
-              selecionada={resposta === index}
-              confirmada={confirmada}
-              correta={index === questao.correta}
-              onClick={() => onAnswer(index)}
-              onSpeak={() =>
-                falar(`${letras[index]}. ${alternativa}`)
-              }
-            />
-          ))}
-        </div>
+        {questao.imagem ? (
+          <div className="mb-6 grid gap-6 md:grid-cols-[220px_1fr] md:items-start">
+            <div className="flex justify-center rounded-2xl bg-gray-50 p-4">
+              <img
+                src={questao.imagem}
+                alt="Placa de trânsito"
+                className="h-52 w-52 object-contain"
+              />
+            </div>
+
+            <div className="space-y-3">
+              {questao.alternativas.map((alternativa, index) => (
+                <Alternative
+                  key={alternativa}
+                  letra={letras[index]}
+                  texto={alternativa}
+                  selecionada={resposta === index}
+                  confirmada={confirmada}
+                  correta={index === questao.correta}
+                  onClick={() => onAnswer(index)}
+                  onSpeak={() =>
+                    falar(`${letras[index]}. ${alternativa}`)
+                  }
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {questao.alternativas.map((alternativa, index) => (
+              <Alternative
+                key={alternativa}
+                letra={letras[index]}
+                texto={alternativa}
+                selecionada={resposta === index}
+                confirmada={confirmada}
+                correta={index === questao.correta}
+                onClick={() => onAnswer(index)}
+                onSpeak={() =>
+                  falar(`${letras[index]}. ${alternativa}`)
+                }
+              />
+            ))}
+          </div>
+        )}
 
         {!confirmada && resposta !== null && (
           <button
             onClick={onConfirm}
-            
             className="mt-6 w-full rounded-2xl bg-blue-600 px-6 py-4 text-xl font-bold text-white transition hover:bg-blue-700"
           >
-            <a href="#proxima" className="block">
-              ✅ Confirmar resposta
-            </a>
+            ✅ Confirmar resposta
           </button>
         )}
       </div>

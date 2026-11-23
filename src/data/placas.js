@@ -492,6 +492,31 @@ const placas = [
       "GRAVE"
     ],
     correta: 2
+  },
+  {
+    id: 39,
+    categoria: "Legislação",
+    pergunta: "QUEM É O RESPONSÁVEL PELA MAIORIA DAS INFRAÇÕES DURANTE A CONDUÇÃO?",
+    alternativas: [
+      "O FABRICANTE",
+      "O PEDESTRE",
+      "O CONDUTOR",
+      "O GUINCHO"
+    ],
+    correta: 2
+  },
+
+  {
+    id: 40,
+    categoria: "Legislação",
+    pergunta: "POR QUE É ERRADO RETIRAR O CAPACETE DE UM MOTOCICLISTA ACIDENTADO?",
+    alternativas: [
+      "O CAPACETE É CARO",
+      "PODE SUJAR AS MÃOS",
+      "O MOTOCICLISTA PODE FUGIR",
+      "RETIRAR O CAPACETE PODE AGRAVAR LESÕES NO PESCOÇO"
+    ],
+    correta:3  
   }
 ];
 

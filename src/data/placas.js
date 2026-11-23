@@ -393,6 +393,105 @@ const placas = [
     ],
     correta: 0,
     imagem: semaforoAFrente
+  },
+  {
+    id: 31,
+    categoria: "Legislação",
+    pergunta: "É CORRETO PARAR OU ESTACIONAR NA ESQUINA A MENOS DE 5 METROS DO CRUZAMENTO?",
+    alternativas: [
+      "NÃO. ISSO ESCONDE O CARRO E AUMENTA O RISCO DE BATIDA",
+      "SIM, SE FOR RAPIDINHO",
+      "SIM, SE LIGAR O PISCA ALERTA",
+      "SIM, SE DEIXAR ALGUÉM DENTRO"
+    ],
+    correta: 0
+  },
+  {
+    id: 32,
+    categoria: "Legislação",
+    pergunta: "UM PEDESTRE USA O CELULAR ENQUANTO ATRAVESSA A VIA. O QUE PODE ACONTECER?",
+    alternativas: [
+      "NADA POIS ESTÁ NA FAIXA.",
+      "ELE PODE SE DISTRAIR E SOFRER UM SINISTRO.",
+      "O MOTORISTA É O ÚNICO RESPONSÁVEL.",
+      "ISSO É SEMPRE PERMITIDO E SEGURO."
+    ],
+    correta: 1,
+  },
+  {
+    id: 33,
+    categoria: "Legislação",
+    pergunta: "O QUE SIGNIFICA SER UM MOTORISTA CONSCIENTE?",
+    alternativas: [
+      "COLOCAR A VIDA DAS PESSOAS ACIMA DA PRESSA.",
+      "ESPERAR NUNCA SER MULTADO.",
+      "SER O MAIS RÁPIDO.",
+      "USAR ATALHOS."
+    ],
+    correta: 0
+  },
+  {
+    id: 34,
+    categoria: "Legislação",
+    pergunta: "ULTRAPASSAGEM CORRETA PARA O MOTOCICLISTA DEVE SER REALIZADA:",
+    alternativas: [
+      "PELA DIREITA PORQUE É MAIS RÁPIDO.",
+      "PELA ESQUERDA, COM ESPAÇO E VELOCIDADE COMPATÍVEIS.",
+      "PELO ACOSTAMETO, PORQUE É MAIS LIVRE.",
+      "ENTRE DOIS VEÍCULOS ZIGZAGUEANDO.",
+
+    ],
+    correta: 1
+  },
+  {
+    id: 35,
+    categoria : "Legislação",
+    pergunta: "BOA PRÁTICA PARA CUIDADO DO CAPACETE:",
+    alternativas: [
+      "NÃO DERRUBAR NO CHÃO, TROCAR EM 3-5 ANOS OU ANTES SE HOUVER DANO.",
+      "GUARDAR SOLTO NO ASSOALHO",
+      "LAVAR SÓ POR FORA",
+      "NUNCA APERTAR O FECHO.",
+    ],
+
+    correta: 0
+  },
+
+  {
+    id: 36,
+    categoria: "Legislação",
+    pergunta: "QUAL É O PRAZO DE RENOVAÇÃO  DA CNH PARA PESSOAS COM IDADE ENTRE 50 A 69 ANOS?",
+    alternativas: [
+      "A CADA 5 ANOS",
+      "A CADA 10 ANOS",
+      "A CADA 3 ANOS",
+      "SÓ QUANDO QUISER" 
+    ],
+    correta: 0
+  },
+  {
+    id: 37,
+    categoria: "Legislação",
+    pergunta: "MOTOCICLISTA DEVE TRAFEGAR:",
+    alternativas: [
+      "ENTRE DUAS FAIXAS",
+      "NO ACOSTAMENTO SEMPRE",
+      "DENTRO DE UMA FAIXA DE ROLAMENTO, COMO QUALQUER OUTRO VEÍCULO",
+      "PELA CALÇADA."
+    ],
+    correta: 2
+  },
+  {
+    id: 38,
+    categoria: "Legislação",
+    pergunta: "CONDUZIR VEÍCULOS NÃO REGISTRADO E LICENCIADO É INFRAÇÃO:",
+    alternativas: [
+      "LEVE",
+      "NÃO É CONSIDERADA INFRAÇÃO",
+      "GRAVÍSSIMA",
+      "GRAVE"
+    ],
+    correta: 2
   }
 ];
 
